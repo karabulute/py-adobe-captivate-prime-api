@@ -1,3 +1,17 @@
+[project]
+name = "py-adobe-captivate-prime-api"
+version = "0.0.1"
+authors = [
+  { name="Emre Karabulut", email="karabulutemre@gmail.com" },
+  { name="Bilge Dogan", email="naryaredhel@gmail.com" },
+]
+description = "A package to use Adobe Captivate Prime APIs (v2)"
+readme = "README.md"
+
+[project.urls]
+Homepage = "https://github.com/karabulute/py-adobe-captivate-prime-api"
+"Bug Tracker" = "https://github.com/karabulute/py-adobe-captivate-prime-api/issues"
+
 [tool.black]
 line-length = 80
 target-version = ['py310']
