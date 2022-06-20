@@ -1,0 +1,26 @@
+[tool.isort]
+line_length = 80
+profile = "black"
+py_version = 38
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+include = '\.pyi?$'
+
+[tool.pylint]
+init-hook='import sys; sys.path.append(".")'
+py-version = [3, 8]
+max-line-length = 80
+good-names = [
+    "main",
+]
+check-quote-consistency = true
+
+ignore-imports = false
+notes = [
+    "TODO",
+]
+logging-modules = [
+    "logging",
+]
