@@ -1,15 +1,15 @@
-[tool.isort]
-line_length = 80
-profile = "black"
-py_version = 38
-
 [tool.black]
 line-length = 80
 target-version = ['py310']
 include = '\.pyi?$'
 
+[tool.isort]
+line_length = 80
+profile = "black"
+py_version = 38
+
 [tool.pylint]
-init-hook='import sys; sys.path.append(".")'
+init-hook = 'import sys; sys.path.append(".")'
 py-version = [3, 8]
 max-line-length = 80
 good-names = [
@@ -23,6 +23,7 @@ check-quote-consistency = true
 ignore-imports = false
 notes = [
     "TODO",
+    "FIXME"
 ]
 logging-modules = [
     "logging",
