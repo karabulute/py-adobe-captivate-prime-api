@@ -15,8 +15,11 @@ max-line-length = 80
 good-names = [
     "main",
 ]
+disable = [
+    "import-outside-toplevel",
+    "duplicate-code",
+    ]
 check-quote-consistency = true
-
 ignore-imports = false
 notes = [
     "TODO",
