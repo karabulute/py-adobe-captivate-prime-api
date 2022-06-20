@@ -18,12 +18,12 @@ good-names = [
 disable = [
     "import-outside-toplevel",
     "duplicate-code",
-    ]
+]
 check-quote-consistency = true
 ignore-imports = false
 notes = [
     "TODO",
-    "FIXME"
+    "FIXME",
 ]
 logging-modules = [
     "logging",
