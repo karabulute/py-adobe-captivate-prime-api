@@ -6,3 +6,13 @@
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 
 ---
+
+
+### Logging
+
+Example code to enable logging with the level of `DEBUG`:
+
+``` python
+logger = logging.getLogger()
+logger.setLevel(level=logging.DEBUG)
+```
