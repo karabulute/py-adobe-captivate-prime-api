@@ -7,6 +7,9 @@
 
 ---
 
+- Official [Captivate Prime API Documentation](https://captivateprime.adobe.com/docs/primeapi/v2/)
+
+---
 
 ### Logging
 
