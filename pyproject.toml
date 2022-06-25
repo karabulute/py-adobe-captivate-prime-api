@@ -2,8 +2,8 @@
 name = "py-adobe-captivate-prime-api"
 version = "0.0.1"
 authors = [
-  { name="Emre Karabulut", email="karabulutemre@gmail.com" },
-  { name="Bilge Dogan", email="naryaredhel@gmail.com" },
+    { name = "Emre Karabulut", email = "karabulutemre@gmail.com" },
+    { name = "Bilge Dogan", email = "naryaredhel@gmail.com" },
 ]
 description = "A package to use Adobe Captivate Prime APIs (v2)"
 readme = "README.md"
@@ -13,25 +13,33 @@ Homepage = "https://github.com/karabulute/py-adobe-captivate-prime-api"
 "Bug Tracker" = "https://github.com/karabulute/py-adobe-captivate-prime-api/issues"
 
 [tool.black]
-line-length = 80
+line-length = 88
 target-version = ['py310']
 include = '\.pyi?$'
 
 [tool.isort]
-line_length = 80
 profile = "black"
+use_parentheses = true
+combine_as_imports = true
 py_version = 310
+force_grid_wrap = 2
 
 [tool.pylint]
 init-hook = 'import sys; sys.path.append(".")'
 py-version = [3, 10]
-max-line-length = 80
+max-line-length = 88
 good-names = [
+    "e",
+    "r",
     "main",
 ]
 disable = [
     "import-outside-toplevel",
     "duplicate-code",
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "too-few-public-methods",
 ]
 check-quote-consistency = true
 ignore-imports = false
@@ -42,3 +50,4 @@ notes = [
 logging-modules = [
     "logging",
 ]
+logging-format-style = "old"
