@@ -1,0 +1,54 @@
+method,url,desc,function_name,edge,isAdminRole,isLearnerRole,function_package
+GET,/badges,Retrieves a list of badges for an account,get_all_badges(),badges,1,,badges
+GET,/badges/{id},Retrieves the details of a badge,get_badge(),badges,1,,badges
+GET,/users/{userId}/userBadges/{id},Retrieves the details of a user badge,get_badge_of_user(),users,1,,users
+GET,/catalogs,Retrieves a list of catalogs,get_all_catalogs(),catalogs,1,,catalogs
+GET,/catalogs/{id},Retrieves the details of a catalog,get_catalog(),catalogs,1,,catalogs
+GET,/account,Retrieves the profile information of a Captivate Prime account,get_account_info(),misc,1,,misc
+GET,/elthor/check,Checks if a version of the elthor desktop app is supported.,check_elthor_support(),misc,1,,misc
+GET,/go,Convenience endpoint for going to a Captivate Prime page,go(),misc,1,,misc
+GET,/skillInterest/search,Retrieves a list of skill interest search results,search_skill_interest(),skills,1,,skills
+GET,/skills,Retrieves a list of skills for an account,get_all_skills(),skills,1,,skills
+GET,/skills/{id},Retrieves the details of a skill,get_skills(),skills,1,,skills
+DELETE,/users/{userId}/skillInterest/{id},Deletes a user skill interest,delete_skill_interest_of_user,users,1,,users
+POST,/users/{userId}/skillInterest/{id},Add a user skill interest,add_skill_interest_to_user,users,1,,users
+GET,/users/{userId}/skillInterests,Retrieves a list of all user skill interest,get_all_user_skill_interests_of_user(),users,1,,users
+GET,/users/{userId}/userSkills,Retrieves a list of all user skills,get_all_user_skills_of_user(),users,1,,users
+GET,/users/{userId}/userSkills/{id},Retrieves the details of a user skill,get_user_skill_of_user(),users,1,,users
+GET,/user,Get detailed information of the current user,get_user_info(),user,1,,
+GET,/userGroups/{userGroupId}/users,Retrieves the list of users with the giver user group id,get_all_users_of_user_group(),userGroups,1,,user_groups
+GET,/users,Retrieves the list of users for an account,get_all_users(),users,1,,users
+POST,/users,Creates a user with the provided details,create_user(),users,1,,users
+GET,/users/{email}/accounts,Retrieves Captivate Prime account for a given email id.,get_all_accounts_of_email(),users,1,,users
+DELETE,/users/{id},Deletes the user with the given user Id.,delete_user(),users,1,,users
+GET,/users/{id},Retrieve the details of the current user,get_user(),users,1,,users
+PATCH,/users/{id},Modifies a user with the provided details,update_user(),users,1,,users
+DELETE,/users/{id}/enrollments/{enrollmentId},Unenroll from a learning object instance,delete_enrollment_of_user(),users,1,,users
+GET,/users/{id}/enrollments/{enrollmentId},Get specific enrollment given user's id and enrollmentId,get_enrollment_of_user(),users,1,,users
+PATCH,/users/{id}/enrollments/{enrollmentId},Update user's Enrollment,update_enrollment_of_user(),users,1,,users
+POST,/users/{id}/userRedeemGamificationPoints,Post the gamifiation points redeemed by a user,redeem_external_gamification_point_of_user(),users,1,,users
+GET,/users/{userId}/learningObjects/{loId}/userBadges,Retrieves list of user badges for a given learning object,get_all_user_badges_of_user_for_learning_object(),users,1,,users
+GET,/users/{userId}/userBadges,Retrieves list of user badges,get_all_badges_of_user(),users,1,,users
+GET,/users/{userId}/userGroups,Retrieves a list of User Groups for a User,get_user_groups_of_user(),users,1,,users
+POST,/users/{userId}/userModuleGrade,Creates a learner Module grade.,create_learner_module_grade_for_user(),users,1,,users
+GET,/users/{userId}/userNotifications,Retrieves the details of all notifications for a user,get_all_user_notifications_of_user(),users,1,,users
+POST,/users/externalGamificationPoint,Add gamification points gained by learner on external systems,add_external_gamification_point_to_user(),users,1,,users
+GET,/userGroups,Retrieves a list of User Groups for an account,get_all_user_groups(),userGroups,1,,user_groups
+GET,/userGroups/{id},Retrieves the details of a User Group,get_user_group(),userGroups,1,,user_groups
+DELETE,/userGroups/{id}/users,Delete one or more users from the group.,delete_users_from_user_group(),userGroups,1,,user_groups
+POST,/userGroups/{id}/users,Add one or more users to the group.,add_users_to_user_group(),userGroups,1,,user_groups
+GET,/userGroups/{userGroupId}/userGroups,Retrieves a list of immediate child User Groups within a User Group,get_child_user_groups_of_user_group(),userGroups,1,,user_groups
+GET,/userGroups/search,Retrieves a list of User Groups search results,search_user_groups(),userGroups,1,,user_groups
+GET,/learningObjects,Retrieves the details of learning objects,get_all_learning_objects(),learningObjects,1,,learning_objects
+GET,/learningObjects/{id},Retrieves the details of a learning object,get_learning_object(),learningObjects,1,,learning_objects
+GET,/learningObjects/{loId}/instances/{loInstanceId}/summary,Retrieve miscellaneous information about a learningObject Instance,get_instance_summary_of_learning_object(),learningObjects,1,,learning_objects
+GET,/users/{id}/enrollments,Get enrollments of a user given userId,get_all_enrollments_of_user(),users,1,,users
+POST,/users/{id}/enrollments,Enroll to a learning object instance,enroll_user_to_instance_of_learning_object(),users,1,,users
+GET,/externalProfiles,Retrieves a list of external profiles for an account,get_all_external_profiles(),externalProfiles,1,,external_profiles
+POST,/externalProfiles,Create an External Profile using given details,create_external_profile(),externalProfiles,1,,external_profiles
+GET,/externalProfiles/{id},Retrieves an external profile specified by the external profile id,get_external_profile(),externalProfiles,1,,external_profiles
+PATCH,/externalProfiles/{id},Update an external profile,update_external_profile(),externalProfiles,1,,external_profiles
+GET,/externalProfiles/{id}/users,Retrieves a list of users for the mentioned external profile,get_all_users_of_external_profile(),externalProfiles,1,,external_profiles
+GET,/jobs,Retrieves a list of jobs submitted by current user,get_all_jobs(),jobs,1,,jobs
+POST,/jobs,Create a new job,create_job(),jobs,1,,jobs
+GET,/jobs/{id},Get the details of the specified job,get_job(),jobs,1,,jobs
