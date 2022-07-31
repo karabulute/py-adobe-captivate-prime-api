@@ -17,6 +17,11 @@ line-length = 88
 target-version = ['py310']
 include = '\.pyi?$'
 
+[tool.docformatter]
+recursive = true
+wrap-summaries = 82
+blank = true
+
 [tool.isort]
 profile = "black"
 use_parentheses = true
