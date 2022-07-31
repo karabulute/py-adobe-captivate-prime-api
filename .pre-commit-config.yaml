@@ -38,3 +38,9 @@ repos:
     entry: pylint
     language: system
     types: [python]
+
+- repo: https://github.com/myint/docformatter
+  rev: v1.3.1
+  hooks:
+  - id: docformatter
+    args: [--check]
