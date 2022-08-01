@@ -2,6 +2,5 @@ black>=22.6
 docformatter>=1.4
 isort>=5.10.1
 pre-commit>=2.20
-pydocstringformatter>=0.6.2
 pylint>=2.14.5
 requests>=2.28.0
