@@ -112,7 +112,7 @@ def create_external_profile(
     externalProfile created with its id.
 
     :param api: CaptivatePrimeAPI
-    :return: None
+    :raise NotImplementedError: Not implemented.
 
     """
     raise NotImplementedError
@@ -124,7 +124,7 @@ def update_external_profile(
     """Update an external profile by specifying externalProfile id.
 
     :param api: CaptivatePrimeAPI
-    :return: None
+    :raise NotImplementedError: Not implemented.
 
     """
     raise NotImplementedError

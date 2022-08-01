@@ -254,11 +254,11 @@ def get_all_users_of_user_group(  # pylint:disable=too-many-arguments
 
 def add_users_to_user_group(
     api: CaptivatePrimeAPI,
-):
+) -> None:
     """Add one or more users to the group.
 
     :param api: CaptivatePrimeAPI
-    :return:
+    :raise NotImplementedError: Not implemented.
 
     """
     raise NotImplementedError
@@ -266,11 +266,11 @@ def add_users_to_user_group(
 
 def delete_users_from_user_group(
     api: CaptivatePrimeAPI,
-):
+) -> None:
     """Delete one or more users from the group.
 
     :param api: CaptivatePrimeAPI
-    :return:
+    :raise NotImplementedError: Not implemented.
 
     """
     raise NotImplementedError

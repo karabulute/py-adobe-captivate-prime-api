@@ -69,7 +69,7 @@ def go(  # pylint:disable=invalid-name
     """Go Urls. Authentication is not required.
 
     :param api: CaptivatePrimeAPI
-    :return: None
+    :raise NotImplementedError: Not implemented.
 
     """
 

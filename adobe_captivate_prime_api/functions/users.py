@@ -655,12 +655,12 @@ def get_all_user_badges_of_user_for_learning_object(  # pylint:disable=too-many-
 
 def enroll_user_to_instance_of_learning_object(
     api: CaptivatePrimeAPI,
-) -> list:
+) -> None:
     """Post a request to enroll to a learning object by specifying the learning
     object id and learning object instance id.
 
     :param api: CaptivatePrimeAPI
-    :return:
+    :raise NotImplementedError: Not implemented.
 
     """
     raise NotImplementedError
@@ -668,11 +668,11 @@ def enroll_user_to_instance_of_learning_object(
 
 def add_external_gamification_point_to_user(
     api: CaptivatePrimeAPI,
-) -> list:
+) -> None:
     """Add gamification points gained by learner on external systems.
 
     :param api: CaptivatePrimeAPI
-    :return:
+    :raise NotImplementedError: Not implemented.
 
     """
     raise NotImplementedError
@@ -680,12 +680,12 @@ def add_external_gamification_point_to_user(
 
 def redeem_external_gamification_point_of_user(
     api: CaptivatePrimeAPI,
-) -> list:
+) -> None:
     """Takes the gamification points redeemed by a user from an external portal
     and marks it as redeemed in Prime.
 
     :param api: CaptivatePrimeAPI
-    :return:
+    :raise NotImplementedError: Not implemented.
 
     """
     raise NotImplementedError
@@ -693,12 +693,12 @@ def redeem_external_gamification_point_of_user(
 
 def create_learner_module_grade_for_use(
     api: CaptivatePrimeAPI,
-) -> list:
+) -> None:
     """Takes the attributes that are provided and creates a Learner module
     grade record. Returns the learner module grade that is created.
 
     :param api: CaptivatePrimeAPI
-    :return:
+    :raise NotImplementedError: Not implemented.
 
     """
     raise NotImplementedError
@@ -706,13 +706,13 @@ def create_learner_module_grade_for_use(
 
 def update_enrollment_of_user(
     api: CaptivatePrimeAPI,
-) -> list:
+) -> None:
     """Update user's enrollment by providing userId and enrollmentId. Presently
     only lastAccessDate can be updated, other fields if present in the body
     will be ignored.
 
     :param api: CaptivatePrimeAPI
-    :return:
+    :raise NotImplementedError: Not implemented.
 
     """
 
@@ -721,12 +721,12 @@ def update_enrollment_of_user(
 
 def delete_enrollment_of_user(
     api: CaptivatePrimeAPI,
-) -> list:
+) -> None:
     """Place a request to un-enroll a user from a learning object instance by
     passing the enrollment id.
 
     :param api: CaptivatePrimeAPI
-    :return:
+    :raise NotImplementedError: Not implemented.
 
     """
 
@@ -735,12 +735,12 @@ def delete_enrollment_of_user(
 
 def create_user(
     api: CaptivatePrimeAPI,
-) -> list:
+) -> None:
     """Takes the attributes that are provided and creates a user. Returns a
     user with the corresponding user id populated.
 
     :param api: CaptivatePrimeAPI
-    :return:
+    :raise NotImplementedError: Not implemented.
 
     """
 
@@ -749,11 +749,11 @@ def create_user(
 
 def delete_user(
     api: CaptivatePrimeAPI,
-) -> list:
+) -> None:
     """Delete the user with the given user id.
 
     :param api: CaptivatePrimeAPI
-    :return:
+    :raise NotImplementedError: Not implemented.
 
     """
 
@@ -762,11 +762,11 @@ def delete_user(
 
 def update_user(
     api: CaptivatePrimeAPI,
-) -> list:
+) -> None:
     """Learner can modify bio, uiLocale, contentLocale, timezone.
 
     :param api: CaptivatePrimeAPI
-    :return:
+    :raise NotImplementedError: Not implemented.
 
     """
 
@@ -775,11 +775,11 @@ def update_user(
 
 def add_skill_interest_to_user(
     api: CaptivatePrimeAPI,
-) -> list:
+) -> None:
     """Add a user skill interest.
 
     :param api: CaptivatePrimeAPI
-    :return:
+    :raise NotImplementedError: Not implemented.
 
     """
 
@@ -788,11 +788,11 @@ def add_skill_interest_to_user(
 
 def delete_skill_interest_of_user(
     api: CaptivatePrimeAPI,
-) -> list:
+) -> None:
     """Delete a user skill interest.
 
     :param api: CaptivatePrimeAPI
-    :return:
+    :raise NotImplementedError: Not implemented.
 
     """
 

@@ -68,12 +68,12 @@ def get_job(
 
 def create_job(
     api: CaptivatePrimeAPI,
-):
+) -> None:
     """Create a new job based on the specified payload. For more details:
     https://captivateprime.adobe.com/docs/primeapi/v2/jobApi.html.
 
     :param api: CaptivatePrimeAPI
-    :return:
+    :raise NotImplementedError: Not implemented.
 
     """
 
