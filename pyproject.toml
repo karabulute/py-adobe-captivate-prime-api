@@ -17,15 +17,17 @@ line-length = 88
 target-version = ['py310']
 include = '\.pyi?$'
 
+[tool.docformatter]
+recursive = true
+wrap-summaries = 82
+blank = true
+
 [tool.isort]
 profile = "black"
 use_parentheses = true
 combine_as_imports = true
 py_version = 310
 force_grid_wrap = 2
-
-[tool.pydocstringformatter]
-write = true
 
 [tool.pylint]
 init-hook = 'import sys; sys.path.append(".")'
