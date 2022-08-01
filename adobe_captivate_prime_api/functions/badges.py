@@ -9,14 +9,15 @@ def get_all_badges(
     limit: int = 10,
     sort: str = "name",
 ):
-    """
-    Get a list of all badges created for an account in your organization
+    """Get a list of all badges created for an account in your organization.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :param offset: int
     :param limit: int
     :param sort: str
     :return: List
+
     """
 
     sort_options = [
@@ -48,15 +49,14 @@ def get_badge(
     api: CaptivatePrimeAPI,
     badge_id: str,
 ):
-    """
-    Get detailed information of a badge.
-    The information includes badge name,
-    badge image URL and status of the badge.
-    Refer to badge model
+    """Get detailed information of a badge. The information includes badge
+    name, badge image URL and status of the badge. Refer to badge model.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :param badge_id: str
     :return: List
+
     """
 
     return api.fetch(
