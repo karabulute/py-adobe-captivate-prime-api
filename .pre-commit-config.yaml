@@ -39,7 +39,8 @@ repos:
     language: system
     types: [python]
 
-- repo: https://github.com/DanielNoord/pydocstringformatter
-  rev: v0.6.2
+- repo: https://github.com/myint/docformatter
+  rev: v1.4
   hooks:
-  - id: pydocstringformatter
+  - id: docformatter
+    args: [--check]
