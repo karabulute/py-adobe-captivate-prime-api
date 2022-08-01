@@ -40,7 +40,7 @@ repos:
     types: [python]
 
 - repo: https://github.com/myint/docformatter
-  rev: v1.4
+  rev: master
   hooks:
   - id: docformatter
     args: [--check]
