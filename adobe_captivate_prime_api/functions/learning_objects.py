@@ -11,21 +11,19 @@ def get_all_learning_objects(  # pylint:disable=too-many-arguments
     sort: str = "name",
     lo_types: str | list = "course",
     ignore_enhanced_lp: bool = True,
-):
+) -> list:
     """Get the details of all the learning objects that Learner is enrolled,
     completed or enabled by the Admin.
 
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param include: str
-    :type include: str
     :param cursor: str
     :param limit: int
     :param sort: str
     :param lo_types: str or list
     :param ignore_enhanced_lp: bool
     :type ignore_enhanced_lp: bool
-    :return: List
+    :return: list
 
     """
 
@@ -61,7 +59,7 @@ def get_all_learning_objects(  # pylint:disable=too-many-arguments
                 'Invalid lo_types value, "course" used as default. Expected values: %s',
                 lo_types_options,
             )
-    elif isinstance(lo_types, list):
+    elif isinstance(lo_types, list):  # pylint:disable=confusing-consecutive-elif
         for lo_type in lo_types:
             if lo_type not in lo_types_options:
                 lo_types.remove(lo_type)
@@ -92,17 +90,15 @@ def get_learning_object(
     api: CaptivatePrimeAPI,
     learning_object_id: str,
     include: str = None,
-):
+) -> list:
     """Get detailed information of a learning object. It includes learning
     object creation date, published date, updated date, and so on. Refer to
     learning object model for more information.
 
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param learning_object_id: str
     :param include: str
-    :type include: str
-    :return: List
+    :return: list
 
     """
 
@@ -121,15 +117,14 @@ def get_instance_summary_of_learning_object(
     api: CaptivatePrimeAPI,
     learning_object_id: str,
     learning_object_instance_id: str,
-):
+) -> list:
     """Retrieve miscellaneous information about a learningObject Instance viz.
     seatLimit, enrollmentCount, waitlistCount, completionCount.
 
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param learning_object_id: str
     :param learning_object_instance_id: str
-    :return: List
+    :return: list
 
     """
 
