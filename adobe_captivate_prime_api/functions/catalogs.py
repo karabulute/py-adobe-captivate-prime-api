@@ -8,15 +8,14 @@ def get_all_catalogs(
     offset: int = 0,
     limit: int = 10,
     sort: str = "name",
-):
+) -> list:
     """Get a list of catalogs for an account in your organization.
 
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param offset: int
     :param limit: int
     :param sort: str
-    :return: List
+    :return: list
 
     """
 
@@ -52,14 +51,13 @@ def get_all_catalogs(
 def get_catalog(
     api: CaptivatePrimeAPI,
     catalog_id: str,
-):
+) -> list:
     """Get detailed information of a catalog. It includes created and updated
     date, name, id, and status.
 
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param catalog_id: str
-    :return: List
+    :return: list
 
     """
 
