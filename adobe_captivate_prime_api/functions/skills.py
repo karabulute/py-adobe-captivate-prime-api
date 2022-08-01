@@ -10,9 +10,9 @@ def get_all_skills(
     sort: str = "name",
     include: str = None,
 ):
-    """
-    Get a list of all the skills for an account in your organization.
-    It includes the skill name and description of each skill
+    """Get a list of all the skills for an account in your organization. It
+    includes the skill name and description of each skill.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :param offset: int
@@ -21,6 +21,7 @@ def get_all_skills(
     :param include: str
     :type include: str
     :return: List
+
     """
 
     sort_options = [
@@ -54,15 +55,16 @@ def get_skill(
     skill_id: str,
     include: str = None,
 ):
-    """
-    Get detailed information of any skill.
-    It includes the skill name and description of the skill
+    """Get detailed information of any skill. It includes the skill name and
+    description of the skill.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :param skill_id: str
     :param include: str
     :type include: str
     :return: List
+
     """
 
     params = {
@@ -83,9 +85,9 @@ def search_skill_interest(
     cursor: str = None,
     name_starts_with: str = None,
 ):
-    """
-    Retrieves a list of skill interest search results
-    whose name contains the input query name
+    """Retrieves a list of skill interest search results whose name contains
+    the input query name.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :param skill_interest_types: str
@@ -94,6 +96,7 @@ def search_skill_interest(
     :type cursor: str
     :param limit: int
     :type limit: int
+
     """
 
     skill_interest_type_options = [

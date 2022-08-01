@@ -4,11 +4,12 @@ from adobe_captivate_prime_api import CaptivatePrimeAPI
 def get_account_info(
     api: CaptivatePrimeAPI,
 ):
-    """
-    Get detailed information for an account in your organization
+    """Get detailed information for an account in your organization.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :return:
+
     """
 
     return api.fetch(
@@ -21,12 +22,13 @@ def check_elthor_support(
     api: CaptivatePrimeAPI,
     version: str,
 ):
-    """
-    Checks if a version of the elthor desktop app is supported
+    """Checks if a version of the elthor desktop app is supported.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :param version: str
     :return:
+
     """
 
     params = {
@@ -44,12 +46,13 @@ def get_user_info(
     api: CaptivatePrimeAPI,
     include: str,
 ):
-    """
-    Get the detailed information of the user who is currently logged in.
+    """Get the detailed information of the user who is currently logged in.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :param include: str
     :return:
+
     """
 
     params = {
@@ -66,11 +69,12 @@ def get_user_info(
 def go(  # pylint:disable=invalid-name
     api: CaptivatePrimeAPI,
 ):
-    """
-    Go Urls. Authentication is not required.
+    """Go Urls. Authentication is not required.
+
     :type api: CaptivatePrimeAPI
     :return:
     :rtype:
+
     """
 
     raise NotImplementedError

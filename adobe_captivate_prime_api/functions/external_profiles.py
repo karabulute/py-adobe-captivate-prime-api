@@ -8,14 +8,15 @@ def get_all_external_profiles(
     offset: int = 0,
     limit: int = 10,
 ):
-    """
-    Retrieves a list of external profiles given an account id
-    which is subject to necessary permissions
+    """Retrieves a list of external profiles given an account id which is
+    subject to necessary permissions.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :param offset: int
     :param limit: int
     :return: List
+
     """
 
     params = {
@@ -34,12 +35,13 @@ def get_external_profile(
     api: CaptivatePrimeAPI,
     external_profile_id: str,
 ):
-    """
-    Retrieve an external profile specified by externalProfile id
+    """Retrieve an external profile specified by externalProfile id.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :param external_profile_id: str
     :return: List
+
     """
 
     return api.fetch(
@@ -55,10 +57,10 @@ def get_all_users_of_external_profile(
     offset: int = 0,
     limit: int = 10,
 ):
-    """
-    Retrieves a list of enrolled users, which is subject to
-    necessary permissions, for the mentioned external profile
-    specified by the externalProfile id.
+    """Retrieves a list of enrolled users, which is subject to necessary
+    permissions, for the mentioned external profile specified by the
+    externalProfile id.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :param external_profile_id: str
@@ -67,6 +69,7 @@ def get_all_users_of_external_profile(
     :param offset: int
     :param limit: int
     :return: List
+
     """
 
     user_states_options = [
@@ -109,13 +112,14 @@ def get_all_users_of_external_profile(
 def create_external_profile(
     api: CaptivatePrimeAPI,
 ):
-    """
-    Creates an External Profile using given details
-    and returns externalProfile created with its id.
+    """Creates an External Profile using given details and returns
+    externalProfile created with its id.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :return:
     :rtype:
+
     """
     raise NotImplementedError
 
@@ -123,11 +127,12 @@ def create_external_profile(
 def update_external_profile(
     api: CaptivatePrimeAPI,
 ):
-    """
-    Update an external profile by specifying externalProfile id.
+    """Update an external profile by specifying externalProfile id.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :return:
     :rtype:
+
     """
     raise NotImplementedError

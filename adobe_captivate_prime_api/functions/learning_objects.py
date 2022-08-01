@@ -12,9 +12,9 @@ def get_all_learning_objects(  # pylint:disable=too-many-arguments
     lo_types: str | list = "course",
     ignore_enhanced_lp: bool = True,
 ):
-    """
-    Get the details of all the learning objects that
-    Learner is enrolled, completed or enabled by the Admin.
+    """Get the details of all the learning objects that Learner is enrolled,
+    completed or enabled by the Admin.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :param include: str
@@ -26,6 +26,7 @@ def get_all_learning_objects(  # pylint:disable=too-many-arguments
     :param ignore_enhanced_lp: bool
     :type ignore_enhanced_lp: bool
     :return: List
+
     """
 
     sort_options = [
@@ -92,17 +93,17 @@ def get_learning_object(
     learning_object_id: str,
     include: str = None,
 ):
-    """
-    Get detailed information of a learning object.
-    It includes learning object creation date,
-    published date, updated date, and so on.
-    Refer to learning object model for more information.
+    """Get detailed information of a learning object. It includes learning
+    object creation date, published date, updated date, and so on. Refer to
+    learning object model for more information.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :param learning_object_id: str
     :param include: str
     :type include: str
     :return: List
+
     """
 
     params = {
@@ -121,14 +122,15 @@ def get_instance_summary_of_learning_object(
     learning_object_id: str,
     learning_object_instance_id: str,
 ):
-    """
-    Retrieve miscellaneous information about a learningObject Instance
-    viz. seatLimit, enrollmentCount, waitlistCount, completionCount
+    """Retrieve miscellaneous information about a learningObject Instance viz.
+    seatLimit, enrollmentCount, waitlistCount, completionCount.
+
     :param api: CaptivatePrimeAPI
     :type api: CaptivatePrimeAPI
     :param learning_object_id: str
     :param learning_object_instance_id: str
     :return: List
+
     """
 
     return api.fetch(
