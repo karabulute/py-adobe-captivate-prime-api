@@ -1,7 +1,5 @@
-"""
-This module is mainly responsible for Adobe Captivate Prime APIs
-and their methods via ``CaptivatePrimeAPI`` class.
-"""
+"""This module is mainly responsible for Adobe Captivate Prime APIs and their
+methods via ``CaptivatePrimeAPI`` class."""
 
 import configparser
 import logging
@@ -21,7 +19,7 @@ class CaptivatePrimeAPI:
     config_file = "config.cfg"
     default_server_instance = "captivateprime"
 
-    def __init__(
+    def __init__(  # pylint:disable=too-many-arguments,too-many-branches
         self,
         server_instance=None,
         application_id=None,
@@ -155,13 +153,14 @@ class CaptivatePrimeAPI:
             else:
                 self.write_config()
 
-    def fetch(self, method, endpoint=None, params=None):
-        """
-        Generic API call function
+    def fetch(self, method: str, endpoint: str = None, params: dict = None) -> list:  # pylint:disable=too-many-branches
+        """Generic API call function.
+
         :param method: str
         :param endpoint: str
         :param params: dict
-        :return: List
+        :return: list
+
         """
 
         url = f"https://{self.server_instance}.adobe.com/primeapi/v2/{endpoint}"
@@ -237,7 +236,7 @@ class CaptivatePrimeAPI:
         """
         Captivate Prime APIs use OAuth 2.0 framework to authenticate
         and authorize your client applications
-        :return:
+        :raise NotImplementedError: Not implemented.
         """
 
         logging.error(
@@ -249,11 +248,12 @@ class CaptivatePrimeAPI:
         raise NotImplementedError("Authenticate manually and set tokens in config.cfg")
 
     def check_access_token(self):
-        """
-        Checks in access token and check if it is expired or not.
+        """Checks in access token and check if it is expired or not.
+
         Logs remaining days and seconds.
         :return: True/False
         :rtype: Boolean
+
         """
 
         params = {
@@ -344,11 +344,12 @@ class CaptivatePrimeAPI:
             return False
 
     def refresh_access_token(self):
-        """
-        Retrieve new access token with given refresh token.
+        """Retrieve new access token with given refresh token.
+
         Returns old access token if previous one is still valid
         :return: access_token, refresh_token
         :rtype: tuple
+
         """
 
         config.read(self.config_file)
@@ -464,10 +465,15 @@ class CaptivatePrimeAPI:
                 f"Unexpected error: {r.status_code} {r.reason} while refreshing token!",
             )
 
-    def write_config(self, content=config):
+    def write_config(
+        self,
+        content: configparser = config,
+    ) -> None:
         """
         :param content: ConfigParser
-        :return
+        :return: None
+        :raise RuntimeError: error while writing to the config file
+
         """
         try:
             with open(self.config_file, "w", encoding="utf-8") as configfile:
