@@ -43,4 +43,4 @@ repos:
   rev: master
   hooks:
   - id: docformatter
-    args: [--check]
+    args: [--in-place --make-summary-multi-line]
