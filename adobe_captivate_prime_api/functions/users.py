@@ -12,23 +12,21 @@ def get_all_users(  # pylint:disable=too-many-arguments
     sort: str = "id",
     user_filter: str = None,
     user_id: str = None,
-):
-    """
-    Get the list of all the users available for
-    your organization’s Captivate Prime account.
-    It includes the list of all users with their names,
-    badge details, points earned and so on
+) -> list:
+    """Get the list of all the users available for your organization’s
+    Captivate Prime account. It includes the list of all users with their
+    names, badge details, points earned and so on.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param include: str
-    :type include: str
     :param cursor: str
     :param user_filter: str
     :param offset: int
     :param limit: int
     :param sort: str
     :param user_id: str
-    :return: List
+    :return: list
+
     """
 
     sort_options = [
@@ -78,16 +76,15 @@ def get_user(
     api: CaptivatePrimeAPI,
     user_id: str,
     include: str = None,
-):
-    """
-    Get the detailed information of any user
-    for your account. It includes the user name,
-    email-id, badges, points earned and so on
+) -> list:
+    """Get the detailed information of any user for your account. It includes
+    the user name, email-id, badges, points earned and so on.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param user_id: str
     :param include: str
-    :return: List
+    :return: list
+
     """
 
     params = {
@@ -108,18 +105,18 @@ def get_all_badges_of_user(  # pylint:disable=too-many-arguments
     cursor: str = None,
     sort: str = "dateAchieved",
     include: str = None,
-):
-    """
-    Get a list of user badges for a user in your organization
+) -> list:
+    """Get a list of user badges for a user in your organization.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param limit: int
     :param sort: str
     :param cursor: str
     :param user_id: str
     :param include: str
     :type include: str
-    :return:
+    :return: list
+
     """
 
     sort_options = [
@@ -153,17 +150,17 @@ def get_badge_of_user(
     user_id: str,
     badge_id: str,
     include: str = None,
-):
-    """
-    Get detailed information of a user badge.
-    It includes id, type, badge name and learner name
+) -> list:
+    """Get detailed information of a user badge. It includes id, type, badge
+    name and learner name.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param user_id: str
     :param badge_id: str
     :param include: str
     :type include: str
     :return:
+
     """
 
     params = {
@@ -178,22 +175,22 @@ def get_badge_of_user(
 
 
 def get_user_groups_of_user(
-    api,
+    api: CaptivatePrimeAPI,
     user_id: str,
     offset: int = 0,
     limit: int = 10,
     sort: str = "name",
-):
-    """
-    Get a list of User Groups for a User.
-    It includes the user group name, description, state and so on
+) -> list:
+    """Get a list of User Groups for a User. It includes the user group name,
+    description, state and so on.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param user_id: str
     :param offset: int
     :param limit: int
     :param sort: str
-    :return: List
+    :return: list
+
     """
 
     sort_options = [
@@ -228,18 +225,18 @@ def get_all_user_skills_of_user(  # pylint:disable=too-many-arguments
     offset: int = 0,
     limit: int = 10,
     sort: str = "dateAchieved",
-):
-    """
-    Get detailed information of a user skill.
-    It includes id, type, points earned, created and archived date
+) -> list:
+    """Get detailed information of a user skill. It includes id, type, points
+    earned, created and archived date.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param user_id: str
     :param include: str
     :param offset: int
     :param limit: int
     :param sort: str
-    :return: List
+    :return: list
+
     """
 
     sort_options = [
@@ -273,16 +270,16 @@ def get_user_skill_of_user(
     user_id: str,
     user_skills_id: str,
     include: str = None,
-):
-    """
-    Get detailed information of a user skill.
-    It includes id, type, points earned, created and archived date
+) -> list:
+    """Get detailed information of a user skill. It includes id, type, points
+    earned, created and archived date.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param user_id: str
     :param user_skills_id: str
     :param include: str
-    :return: List
+    :return: list
+
     """
 
     params = {
@@ -305,14 +302,12 @@ def get_all_user_notifications_of_user(  # pylint:disable=too-many-arguments
     announcements_only: bool = False,
     language: str = "en_US",
     user_selected_channels: str | list = None,
-):
-    """
-    Get the list of all the users available for
-    your organization’s Captivate Prime account.
-    It includes the list of all users with their names,
-    badge details, points earned and so on
+) -> list:
+    """Get the list of all the users available for your organization’s
+    Captivate Prime account. It includes the list of all users with their
+    names, badge details, points earned and so on.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param user_id: str
     :param cursor: str
     :param limit: int
@@ -320,7 +315,8 @@ def get_all_user_notifications_of_user(  # pylint:disable=too-many-arguments
     :param announcements_only: bool
     :param language: str
     :param user_selected_channels: str or list
-    :return: List
+    :return: list
+
     """
 
     user_selected_channels_options = [
@@ -407,19 +403,19 @@ def get_all_user_skill_interests_of_user(  # pylint:disable=too-many-arguments
     offset: int = 0,
     limit: int = 10,
     sort: str = "dateAchieved",
-):
-    """
-    Get detailed information of a user skill interest.
-    It includes id, user_id, skill_id, created date and source of creation
+) -> list:
+    """Get detailed information of a user skill interest. It includes id,
+    user_id, skill_id, created date and source of creation.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param user_id: str
     :param skill_interest_types: str
     :param include: str
     :param offset: int
     :param limit: int
     :param sort: str
-    :return: List
+    :return: list
+
     """
 
     sort_options = [
@@ -471,12 +467,11 @@ def get_all_enrollments_of_user(  # pylint:disable=too-many-arguments
     sort: str = "name",
     lo_types: str | list = "course",
     states: str = None,
-):
-    """
-    Get the details of all the learning objects that
-    Learner is enrolled, completed or enabled by the Admin
+) -> list:
+    """Get the details of all the learning objects that Learner is enrolled,
+    completed or enabled by the Admin.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param user_id: str
     :param include: str
     :type include: str
@@ -485,7 +480,8 @@ def get_all_enrollments_of_user(  # pylint:disable=too-many-arguments
     :param sort: str
     :param lo_types: str or list
     :param states: str
-    :return: List
+    :return: list
+
     """
 
     sort_options = [
@@ -514,7 +510,7 @@ def get_all_enrollments_of_user(  # pylint:disable=too-many-arguments
                 'Invalid lo_types value, "course" used as default. Expected values: %s',
                 lo_types_options,
             )
-    elif isinstance(lo_types, list):
+    elif isinstance(lo_types, list):  # pylint:disable=confusing-consecutive-elif
         for lo_type in lo_types:
             if lo_type not in lo_types_options:
                 lo_types.remove(lo_type)
@@ -557,15 +553,15 @@ def get_enrollment_of_user(
     user_id: str,
     enrollment_id: str,
     include: str = None,
-):
-    """
-    Get specific enrollment given user's id and enrollmentId
+) -> list:
+    """Get specific enrollment given user's id and enrollmentId.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param user_id: str
     :param enrollment_id: str
     :param include: str
-    :return: List
+    :return: list
+
     """
 
     params = {
@@ -584,16 +580,16 @@ def get_all_accounts_of_email(
     email: str,
     only_active: bool = True,
     social_enabled_accounts: bool = False,
-):
-    """
-    Get a list of all Captivate Prime accounts for a given email id.
-    This API does not require an authentication check.
+) -> list:
+    """Get a list of all Captivate Prime accounts for a given email id. This
+    API does not require an authentication check.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param email: str
     :param only_active: bool
     :param social_enabled_accounts: bool
-    :return: List
+    :return: list
+
     """
 
     params = {
@@ -616,19 +612,19 @@ def get_all_user_badges_of_user_for_learning_object(  # pylint:disable=too-many-
     cursor: str = None,
     limit: int = 10,
     sort: str = "name",
-):
-    """
-    Get the details of all the learning objects that
-    Learner is enrolled, completed or enabled by the Admin.
+) -> list:
+    """Get the details of all the learning objects that Learner is enrolled,
+    completed or enabled by the Admin.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param user_id: str
     :param learning_object_id: str
     :param include: str
     :param cursor: str
     :param limit: int
     :param sort: str
-    :return: List
+    :return: list
+
     """
 
     sort_options = [
@@ -659,70 +655,65 @@ def get_all_user_badges_of_user_for_learning_object(  # pylint:disable=too-many-
 
 def enroll_user_to_instance_of_learning_object(
     api: CaptivatePrimeAPI,
-):
-    """
-    Post a request to enroll to a learning object by specifying
-    the learning object id and learning object instance id
+) -> None:
+    """Post a request to enroll to a learning object by specifying the learning
+    object id and learning object instance id.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+    :raise NotImplementedError: Not implemented.
+
     """
     raise NotImplementedError
 
 
 def add_external_gamification_point_to_user(
     api: CaptivatePrimeAPI,
-):
-    """
-    Add gamification points gained by learner on external systems
+) -> None:
+    """Add gamification points gained by learner on external systems.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+    :raise NotImplementedError: Not implemented.
+
     """
     raise NotImplementedError
 
 
 def redeem_external_gamification_point_of_user(
     api: CaptivatePrimeAPI,
-):
-    """
-    Takes the gamification points redeemed by a user from
-    an external portal and marks it as redeemed in Prime
+) -> None:
+    """Takes the gamification points redeemed by a user from an external portal
+    and marks it as redeemed in Prime.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+    :raise NotImplementedError: Not implemented.
+
     """
     raise NotImplementedError
 
 
 def create_learner_module_grade_for_use(
     api: CaptivatePrimeAPI,
-):
-    """
-    Takes the attributes that are provided and creates a Learner module
-    grade record. Returns the learner module grade that is created
+) -> None:
+    """Takes the attributes that are provided and creates a Learner module
+    grade record. Returns the learner module grade that is created.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+    :raise NotImplementedError: Not implemented.
+
     """
     raise NotImplementedError
 
 
 def update_enrollment_of_user(
     api: CaptivatePrimeAPI,
-):
-    """
-    Update user's enrollment by providing userId and enrollmentId.
-    Presently only lastAccessDate can be updated, other fields
-    if present in the body will be ignored
+) -> None:
+    """Update user's enrollment by providing userId and enrollmentId. Presently
+    only lastAccessDate can be updated, other fields if present in the body
+    will be ignored.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+    :raise NotImplementedError: Not implemented.
+
     """
 
     raise NotImplementedError
@@ -730,14 +721,13 @@ def update_enrollment_of_user(
 
 def delete_enrollment_of_user(
     api: CaptivatePrimeAPI,
-):
-    """
-    Place a request to un-enroll a user from
-    a learning object instance by passing the enrollment id
+) -> None:
+    """Place a request to un-enroll a user from a learning object instance by
+    passing the enrollment id.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+    :raise NotImplementedError: Not implemented.
+
     """
 
     raise NotImplementedError
@@ -745,13 +735,13 @@ def delete_enrollment_of_user(
 
 def create_user(
     api: CaptivatePrimeAPI,
-):
-    """
-    Takes the attributes that are provided and creates a user.
-    Returns a user with the corresponding user id populated
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+) -> None:
+    """Takes the attributes that are provided and creates a user. Returns a
+    user with the corresponding user id populated.
+
+    :param api: CaptivatePrimeAPI
+    :raise NotImplementedError: Not implemented.
+
     """
 
     raise NotImplementedError
@@ -759,12 +749,12 @@ def create_user(
 
 def delete_user(
     api: CaptivatePrimeAPI,
-):
-    """
-    Delete the user with the given user id
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+) -> None:
+    """Delete the user with the given user id.
+
+    :param api: CaptivatePrimeAPI
+    :raise NotImplementedError: Not implemented.
+
     """
 
     raise NotImplementedError
@@ -772,12 +762,12 @@ def delete_user(
 
 def update_user(
     api: CaptivatePrimeAPI,
-):
-    """
-    Learner can modify bio, uiLocale, contentLocale, timezone
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+) -> None:
+    """Learner can modify bio, uiLocale, contentLocale, timezone.
+
+    :param api: CaptivatePrimeAPI
+    :raise NotImplementedError: Not implemented.
+
     """
 
     raise NotImplementedError
@@ -785,12 +775,12 @@ def update_user(
 
 def add_skill_interest_to_user(
     api: CaptivatePrimeAPI,
-):
-    """
-    Add a user skill interest
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+) -> None:
+    """Add a user skill interest.
+
+    :param api: CaptivatePrimeAPI
+    :raise NotImplementedError: Not implemented.
+
     """
 
     raise NotImplementedError
@@ -798,12 +788,12 @@ def add_skill_interest_to_user(
 
 def delete_skill_interest_of_user(
     api: CaptivatePrimeAPI,
-):
-    """
-    Delete a user skill interest
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+) -> None:
+    """Delete a user skill interest.
+
+    :param api: CaptivatePrimeAPI
+    :raise NotImplementedError: Not implemented.
+
     """
 
     raise NotImplementedError

@@ -7,15 +7,15 @@ def get_all_external_profiles(
     api: CaptivatePrimeAPI,
     offset: int = 0,
     limit: int = 10,
-):
-    """
-    Retrieves a list of external profiles given an account id
-    which is subject to necessary permissions
+) -> list:
+    """Retrieves a list of external profiles given an account id which is
+    subject to necessary permissions.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param offset: int
     :param limit: int
-    :return: List
+    :return: list
+
     """
 
     params = {
@@ -33,13 +33,13 @@ def get_all_external_profiles(
 def get_external_profile(
     api: CaptivatePrimeAPI,
     external_profile_id: str,
-):
-    """
-    Retrieve an external profile specified by externalProfile id
+) -> list:
+    """Retrieve an external profile specified by externalProfile id.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param external_profile_id: str
-    :return: List
+    :return: list
+
     """
 
     return api.fetch(
@@ -54,19 +54,18 @@ def get_all_users_of_external_profile(
     user_states: str | list = None,
     offset: int = 0,
     limit: int = 10,
-):
-    """
-    Retrieves a list of enrolled users, which is subject to
-    necessary permissions, for the mentioned external profile
-    specified by the externalProfile id.
+) -> list:
+    """Retrieves a list of enrolled users, which is subject to necessary
+    permissions, for the mentioned external profile specified by the
+    externalProfile id.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param external_profile_id: str
     :param user_states: str or list
-    :type user_states: str or list
     :param offset: int
     :param limit: int
-    :return: List
+    :return: list
+
     """
 
     user_states_options = [
@@ -82,7 +81,7 @@ def get_all_users_of_external_profile(
                 'Invalid lo_types value, "None" used as default. Expected values: %s',
                 user_states_options,
             )
-    elif isinstance(user_states, list):
+    elif isinstance(user_states, list):  # pylint:disable=confusing-consecutive-elif
         for user_state in user_states:
             if user_state not in user_states_options:
                 user_states.remove(user_state)
@@ -108,26 +107,24 @@ def get_all_users_of_external_profile(
 
 def create_external_profile(
     api: CaptivatePrimeAPI,
-):
-    """
-    Creates an External Profile using given details
-    and returns externalProfile created with its id.
+) -> None:
+    """Creates an External Profile using given details and returns
+    externalProfile created with its id.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+    :raise NotImplementedError: Not implemented.
+
     """
     raise NotImplementedError
 
 
 def update_external_profile(
     api: CaptivatePrimeAPI,
-):
-    """
-    Update an external profile by specifying externalProfile id.
+) -> None:
+    """Update an external profile by specifying externalProfile id.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+    :raise NotImplementedError: Not implemented.
+
     """
     raise NotImplementedError

@@ -3,12 +3,12 @@ from adobe_captivate_prime_api import CaptivatePrimeAPI
 
 def get_account_info(
     api: CaptivatePrimeAPI,
-):
-    """
-    Get detailed information for an account in your organization
+) -> list:
+    """Get detailed information for an account in your organization.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :return:
+
     """
 
     return api.fetch(
@@ -20,13 +20,13 @@ def get_account_info(
 def check_elthor_support(
     api: CaptivatePrimeAPI,
     version: str,
-):
-    """
-    Checks if a version of the elthor desktop app is supported
+) -> list:
+    """Checks if a version of the elthor desktop app is supported.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param version: str
-    :return:
+    :return: list
+
     """
 
     params = {
@@ -43,13 +43,13 @@ def check_elthor_support(
 def get_user_info(
     api: CaptivatePrimeAPI,
     include: str,
-):
-    """
-    Get the detailed information of the user who is currently logged in.
+) -> list:
+    """Get the detailed information of the user who is currently logged in.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param include: str
-    :return:
+    :return: list
+
     """
 
     params = {
@@ -65,12 +65,12 @@ def get_user_info(
 
 def go(  # pylint:disable=invalid-name
     api: CaptivatePrimeAPI,
-):
-    """
-    Go Urls. Authentication is not required.
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+) -> None:
+    """Go Urls. Authentication is not required.
+
+    :param api: CaptivatePrimeAPI
+    :raise NotImplementedError: Not implemented.
+
     """
 
     raise NotImplementedError

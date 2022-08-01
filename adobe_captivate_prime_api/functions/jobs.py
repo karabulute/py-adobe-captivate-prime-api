@@ -8,16 +8,16 @@ def get_all_jobs(
     offset: int = 0,
     limit: int = 10,
     sort: str = "id",
-):
-    """
-    Jobs are requests for asynchronous task executions.
-    Get the list of jobs submitted.
+) -> list:
+    """Jobs are requests for asynchronous task executions. Get the list of jobs
+    submitted.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param offset: int
     :param limit: int
     :param sort: str
-    :return: List
+    :return: list
+
     """
 
     sort_options = [
@@ -50,15 +50,14 @@ def get_all_jobs(
 def get_job(
     api: CaptivatePrimeAPI,
     job_id: str,
-):
-    """
-    Get detailed information about the specified job like
-    job type, dateCreated, dateCompleted and status.
-    Refer to the job model.
+) -> list:
+    """Get detailed information about the specified job like job type,
+    dateCreated, dateCompleted and status. Refer to the job model.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param job_id: str
-    :return: List
+    :return: list
+
     """
 
     return api.fetch(
@@ -69,14 +68,13 @@ def get_job(
 
 def create_job(
     api: CaptivatePrimeAPI,
-):
-    """
-    Create a new job based on the specified payload.
-    For more details:
-    https://captivateprime.adobe.com/docs/primeapi/v2/jobApi.html
+) -> None:
+    """Create a new job based on the specified payload. For more details:
+    https://captivateprime.adobe.com/docs/primeapi/v2/jobApi.html.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
-    :return:
+    :raise NotImplementedError: Not implemented.
+
     """
 
     raise NotImplementedError

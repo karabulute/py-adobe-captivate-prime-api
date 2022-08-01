@@ -11,19 +11,19 @@ def get_all_user_groups(  # pylint:disable=too-many-arguments
     read_only: bool = None,
     states: str = None,
     catalog_id: str = None,
-):
-    """
-    Get a list of User Groups for an account.
-    It includes the user group name, description, state and so on
+) -> list:
+    """Get a list of User Groups for an account. It includes the user group
+    name, description, state and so on.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param offset: int
     :param limit: int
     :param sort: str
     :param catalog_id: str
     :param read_only: bool
     :param states: str
-    :return: List
+    :return: list
+
     """
 
     sort_options = [
@@ -69,16 +69,16 @@ def get_all_user_groups(  # pylint:disable=too-many-arguments
 
 
 def get_user_group(
-    api,
+    api: CaptivatePrimeAPI,
     user_group_id: str = None,
-):
-    """
-    Get detailed information of a single user group.
-    It includes the user group name, description, state and so on
+) -> list:
+    """Get detailed information of a single user group. It includes the user
+    group name, description, state and so on.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param user_group_id: str
-    :return: List
+    :return: list
+
     """
 
     return api.fetch(
@@ -93,12 +93,11 @@ def search_user_groups(
     cursor: str = None,
     sort: str = "name",
     name_starts_with: str = None,
-):
-    """
-    Retrieves a list of User Groups search results
-    whose name contains the input query name
+) -> list:
+    """Retrieves a list of User Groups search results whose name contains the
+    input query name.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param limit: int
     :type limit: int
     :param cursor: str
@@ -107,8 +106,8 @@ def search_user_groups(
     :type sort: str
     :param name_starts_with: str
     :type name_starts_with: str
-    :return:
-    :rtype:
+    :return: list
+
     """
 
     sort_options = [
@@ -146,12 +145,11 @@ def get_child_user_groups_of_user_group(  # pylint:disable=too-many-arguments
     read_only: bool = None,
     states: str = None,
     catalog_id: str = None,
-):
-    """
-    Get a list of immediate child User Groups within a User Group.
-    It includes the user group name, description, state and so on
+) -> list:
+    """Get a list of immediate child User Groups within a User Group. It
+    includes the user group name, description, state and so on.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param user_group_id: str
     :param offset: int
     :param limit: int
@@ -159,7 +157,8 @@ def get_child_user_groups_of_user_group(  # pylint:disable=too-many-arguments
     :param catalog_id: str
     :param read_only: bool
     :param states: str
-    :return: List
+    :return: list
+
     """
 
     sort_options = [
@@ -211,18 +210,18 @@ def get_all_users_of_user_group(  # pylint:disable=too-many-arguments
     limit: int = 10,
     sort: str = "id",
     include: str = None,
-):
-    """
-    Retrieves the list of users with the giver user group id
+) -> list:
+    """Retrieves the list of users with the giver user group id.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
     :param offset: int
     :param limit: int
     :param sort: str
     :param user_group_id: str
     :param include: str
     :type include: str
-    :return:
+    :return: list
+
     """
 
     sort_options = [
@@ -255,25 +254,23 @@ def get_all_users_of_user_group(  # pylint:disable=too-many-arguments
 
 def add_users_to_user_group(
     api: CaptivatePrimeAPI,
-):
-    """
-    Add one or more users to the group
+) -> None:
+    """Add one or more users to the group.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+    :raise NotImplementedError: Not implemented.
+
     """
     raise NotImplementedError
 
 
 def delete_users_from_user_group(
     api: CaptivatePrimeAPI,
-):
-    """
-    Delete one or more users from the group
+) -> None:
+    """Delete one or more users from the group.
+
     :param api: CaptivatePrimeAPI
-    :type api: CaptivatePrimeAPI
-    :return:
-    :rtype:
+    :raise NotImplementedError: Not implemented.
+
     """
     raise NotImplementedError

@@ -51,3 +51,17 @@ logging-modules = [
     "logging",
 ]
 logging-format-style = "old"
+load-plugins = [
+    "pylint.extensions.check_elif",
+    "pylint.extensions.code_style",
+    "pylint.extensions.comparetozero",
+    "pylint.extensions.confusing_elif",
+    "pylint.extensions.docparams",
+    "pylint.extensions.docstyle",
+    "pylint.extensions.empty_comment",
+    "pylint.extensions.for_any_all",
+]
+accept-no-param-doc = false
+accept-no-raise-doc = false
+accept-no-return-doc = false
+accept-no-yields-doc = false
