@@ -36,9 +36,6 @@ good-names = [
 disable = [
     "import-outside-toplevel",
     "duplicate-code",
-    "missing-module-docstring",
-    "missing-class-docstring",
-    "missing-function-docstring",
     "too-few-public-methods",
 ]
 check-quote-consistency = true

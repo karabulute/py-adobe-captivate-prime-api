@@ -1,3 +1,4 @@
+"""Module providing set of User API functions."""
 import logging
 
 from adobe_captivate_prime_api import CaptivatePrimeAPI

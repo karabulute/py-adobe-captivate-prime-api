@@ -16,6 +16,8 @@ config = configparser.ConfigParser()
 
 
 class CaptivatePrimeAPI:
+    """CaptivatePrimeAPI Class."""
+
     config_file = "config.cfg"
     default_server_instance = "captivateprime"
 
@@ -153,13 +155,17 @@ class CaptivatePrimeAPI:
             else:
                 self.write_config()
 
-    def fetch(self, method: str, endpoint: str = None, params: dict = None) -> list:  # pylint:disable=too-many-branches
+    def fetch(  # pylint:disable=too-many-branches
+        self, method: str, endpoint: str = None, params: dict = None
+    ) -> list:
         """Generic API call function.
 
         :param method: str
         :param endpoint: str
         :param params: dict
         :return: list
+        :raises: NotImplementedError: Not implemented.
+        :exception Exception: Broad exception.
 
         """
 
@@ -208,7 +214,7 @@ class CaptivatePrimeAPI:
                             "Access is denied due to invalid credentials. "
                             "Automatic process will try to refresh it..."
                         )
-                        if self.check_access_token() is False:
+                        if not self.check_access_token():
                             url = None
                     else:
                         logging.error("%s %s", r.status_code, r.reason)
@@ -229,14 +235,15 @@ class CaptivatePrimeAPI:
                 raise NotImplementedError("DELETE method is not yet implemented.")
         except Exception as e:
             logging.error(str(e), url)
-            return
+            raise Exception from e
 
     @staticmethod
     def create_tokens():
-        """
-        Captivate Prime APIs use OAuth 2.0 framework to authenticate
-        and authorize your client applications
+        """Captivate Prime APIs use OAuth 2.0 framework to authenticate and
+        authorize your client applications.
+
         :raise NotImplementedError: Not implemented.
+
         """
 
         logging.error(
@@ -349,6 +356,7 @@ class CaptivatePrimeAPI:
         Returns old access token if previous one is still valid
         :return: access_token, refresh_token
         :rtype: tuple
+        :raises RuntimeError: Failed authorization or unexpected error while refreshing.
 
         """
 
@@ -469,10 +477,10 @@ class CaptivatePrimeAPI:
         self,
         content: configparser = config,
     ) -> None:
-        """
+        """Write config to file.
+
         :param content: ConfigParser
-        :return: None
-        :raise RuntimeError: error while writing to the config file
+        :raise RuntimeError: error while writing to the config file.
 
         """
         try:

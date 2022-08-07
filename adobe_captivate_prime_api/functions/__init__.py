@@ -1,3 +1,4 @@
+"""Module providing set of Captivate Prime API functions."""
 from .badges import (
     get_all_badges,
     get_badge,
