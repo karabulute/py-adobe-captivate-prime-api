@@ -1,3 +1,4 @@
+"""Module providing set of Miscellaneous API functions."""
 from adobe_captivate_prime_api import CaptivatePrimeAPI
 
 
