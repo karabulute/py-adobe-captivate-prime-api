@@ -183,14 +183,18 @@ class CaptivatePrimeAPI:
                     r = requests.get(url=url, params=params, headers=headers)
                     r_json = r.json()
                     if r.status_code == 200:
-                        if isinstance(r_json["data"], list):
-                            r_data.extend(r_json["data"])
-                        elif isinstance(r_json["data"], dict):
-                            r_data.append(dict(r_json["data"]))
-                        try:
-                            url = r_json["links"]["next"]
-                            params = {}
-                        except KeyError:
+                        if "data" in r_json:
+                            if isinstance(r_json["data"], list):
+                                r_data.extend(r_json["data"])
+                            elif isinstance(r_json["data"], dict):
+                                r_data.append(dict(r_json["data"]))
+                            try:
+                                url = r_json["links"]["next"]
+                                params = {}
+                            except KeyError:
+                                url = None
+                        else:
+                            logging.debug("Response has no data: %s", url)
                             url = None
                     elif r.status_code == 400:
                         logging.error(

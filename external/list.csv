@@ -52,3 +52,4 @@ GET,/externalProfiles/{id}/users,Retrieves a list of users for the mentioned ext
 GET,/jobs,Retrieves a list of jobs submitted by current user,get_all_jobs(),jobs,1,,jobs
 POST,/jobs,Create a new job,create_job(),jobs,1,,jobs
 GET,/jobs/{id},Get the details of the specified job,get_job(),jobs,1,,jobs
+GET,/ecommerce/maxPrice,Retrieves max price of any LO present in account,get_ecommerce_max_price(),ecommerce,1,,ecommerce
